@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/09/hello-world/</url>
-    <content><![CDATA[<p>作为第一篇文章，希望这里能成为我喜欢休憩的净土，和一个有趣的世界。</p>]]></content>
-      <tags>
-        <tag>Beginning[开始]</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>三月上</title>
     <url>/2021/03/17/%E4%B8%89%E6%9C%88%E4%B8%8A/</url>
-    <content><![CDATA[<h2 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h2><p>深刻意识到大一和大二上欠“债”太多，现在开始要好好调整安排和作息。</p>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="294" height="86" src="//music.163.com/outchain/player?type=2&id=1472921626&auto=1&height=66">
+</iframe>
+
+
+
+<h2 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h2><p>深刻意识到大一和大二上欠“债”太多，现在开始要好好调整安排和作息。</p>
 <p>买了一个驼色的秋刀鱼TN手账，旅行款的那种，比较小一个，适合随身携带。看了下网上的手账使用方法，发现和自己想象的不是同一个世界。原来做手账也是一门学问，好的手账er可以做的非常精美有意思。不过对于我这种工科男来讲，能用的就是记录一些idea和要做的事情、问题之类的。或者贴一些有意思的东西，比如去年去迪士尼留下来的门票。</p>
 <p>每天早上7：20起床，8：00到图书馆进朗读亭开始读英语。上大学之前以为自己的英语口语还是不错的，直到进入广播站英文专题才发现，简直就是xx。开始听VOA跟读，打开电脑看B站上面Lisa的美音练习，练到9：00，再自习一会儿就去上课。晚上十点后开始自学日语，学到十一点上床睡觉。</p>
 <p>这学期玩的时间几乎没有了，手机上游戏和B站都卸了，只有偶尔看看Rng的比赛，或者看点别的。最近在看创造营2021，觉得还挺有意思的，现在基本每一期都会看。打算近期写一篇相关文章评价这次创造营2021。</p>
@@ -76,7 +73,10 @@
 <p>后来和同进组的同学交流了一下，发现我进的还是很快很顺利的。可能是他觉得我高中有竞赛基础吧。</p>
 <p>加了他微信后，又加了实验室的群，科研之旅也算是正式开始了。已经做好了学一堆新知识看一堆论文的准备了。</p>
 <p>PS：杨洋老师的头像和他本人一样的有趣。</p>
-<p><img src="/2021/03/17/%E4%B8%89%E6%9C%88%E4%B8%8A/%E6%9D%A8%E6%B4%8B.jpg" alt="杨洋"></p>]]></content>
+<p><img src="/2021/03/17/%E4%B8%89%E6%9C%88%E4%B8%8A/%E6%9D%A8%E6%B4%8B.jpg" alt="杨洋"></p>
+<h1 id="三月上"><a href="#三月上" class="headerlink" title="三月上"></a>三月上</h1><p>とにかく，三月上还是很忙的。忙到没有时间也没有心情去看学校里到处开的花儿。广播站有同学趁着周末去了趟武汉赏花，想来还是挺羡慕的。</p>
+<p>不过换种方式想想，我也算忙的充实。迈入了最期待的科研大门，希望能开启一段有意思的旅程。</p>
+<p>GoGoGo:sunglasses:</p>]]></content>
       <categories>
         <category>Life</category>
         <category>Summary</category>
@@ -84,6 +84,14 @@
       <tags>
         <tag>Life chips</tag>
         <tag>Summary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/09/hello-world/</url>
+    <content><![CDATA[<p>作为第一篇文章，希望这里能成为我喜欢休憩的净土，和一个有趣的世界。</p>]]></content>
+      <tags>
+        <tag>Beginning[开始]</tag>
       </tags>
   </entry>
 </search>
