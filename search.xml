@@ -57,12 +57,12 @@
 <p><strong>Note</strong>: Use Function <code>round()</code> to round the result.</p>
 <h2 id="Question-2"><a href="#Question-2" class="headerlink" title="Question 2"></a>Question 2</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">avg_cluster_coef = <span class="built_in">round</span>(nx.average_clustering(G), <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>About clustering coefficient:</p>
-<p><img src="/2021/05/30/CS224W-Lab1/CS224W-Lab1%5Cimage-20210528172335527.png" alt="image-20210528172335527"></p>
+<p><img src="/2021/05/30/CS224W-Lab1/image-20210528172335527.png" alt="image-20210528172335527"></p>
 <p>Call the function of NetworkX to calculate the answer.</p>
 <h2 id="Question-3"><a href="#Question-3" class="headerlink" title="Question 3"></a>Question 3</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ni <span class="keyword">in</span> nx.neighbors(G, node_id):</span><br><span class="line">  r1 += beta * r0 / G.degree[ni]</span><br><span class="line">r1 += (<span class="number">1</span> - beta) * r0</span><br><span class="line">r1 = <span class="built_in">round</span>(r1, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>Pay attention to that: we only need to calculate <code>PageRank</code> of <code>node 0</code> after one iteration. So we could use r<del>0</del> to replace r<del>i</del> .</p>
 <p>More specific algorithm:</p>
-<p><img src="/2021/05/30/CS224W-Lab1/CS224W-Lab1%5Cimage-20210528210137487.png" alt="image-20210528210137487"></p>
+<p><img src="/2021/05/30/CS224W-Lab1/image-20210528210137487.png" alt="image-20210528210137487"></p>
 <h2 id="Question-4"><a href="#Question-4" class="headerlink" title="Question 4"></a>Question 4</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sigma_shortd = nx.shortest_path_length(G, source = node)</span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> ni <span class="keyword">in</span> <span class="built_in">range</span> (G.number_of_nodes()):</span><br><span class="line">  <span class="keyword">if</span> (ni != node):</span><br><span class="line">    <span class="built_in">sum</span> += sigma_shortd[ni]</span><br><span class="line">closeness = <span class="built_in">round</span>(<span class="number">1</span> / <span class="built_in">sum</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>or</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">closeness = nx.closeness_centrality(G, u = node) / (G.number_of_nodes() - <span class="number">1</span>)</span><br><span class="line"><span class="comment">#Divide n-1 (n=nodes that u could reach). See the docs</span></span><br></pre></td></tr></table></figure>
@@ -109,7 +109,7 @@
 <ul>
 <li><p>NetworkX</p>
 <p>For Graph: <a href="https://networkx.org/documentation/stable/reference/classes/index.html">NetworkX graph types</a></p>
-<p><img src="/2021/05/30/CS224W-Lab0/CS224W-Lab0%5Cimage-20210527212511812.png" alt="image-20210527212511812"></p>
+<p><img src="/2021/05/30/CS224W-Lab0/image-20210527212511812.png" alt="image-20210527212511812"></p>
 </li>
 <li><p>PyTorch Geometric</p>
 </li>
@@ -136,11 +136,11 @@
 </li>
 <li><p><code>G.add_nodes_from()</code></p>
 <p>A more flexible way to add nodes. (Add list or something)</p>
-<p><img src="/2021/05/30/CS224W-Lab0/CS224W-Lab0%5Cimage-20210527214842221.png" alt="image-20210527214842221"></p>
+<p><img src="/2021/05/30/CS224W-Lab0/image-20210527214842221.png" alt="image-20210527214842221"></p>
 <ul>
 <li><p>About <code>(data=True)</code></p>
 <p>It could return the attributes information of node when printing.<strong>(Need deeper understanding here)</strong></p>
-<p><img src="/2021/05/30/CS224W-Lab0/CS224W-Lab0%5Cimage-20210527215110377.png" alt="image-20210527215110377"></p>
+<p><img src="/2021/05/30/CS224W-Lab0/image-20210527215110377.png" alt="image-20210527215110377"></p>
 </li>
 </ul>
 </li>
@@ -270,7 +270,7 @@
 <p><strong>Basic Function</strong>:</p>
 <p><img src="/2021/05/30/CS224W-Sec-1-3/image-20210529211453112.png" alt="image-20210529211453112"></p>
 <p>Improvement:</p>
-<p><img src="/2021/05/30/CS224W-Sec-1-3/CS224W-Sec-1-3%5Cimage-20210529212644608.png" alt="image-20210529212644608.png"></p>
+<p><img src="/2021/05/30/CS224W-Sec-1-3/image-20210529212644608.png"></p>
 <p>In practice, k = 5 ~ 20. </p>
 <ul>
 <li>Higher k gives more robust estimates</li>
@@ -530,7 +530,7 @@
   <entry>
     <title>你好，李焕英</title>
     <url>/2021/03/19/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9D%8E%E7%84%95%E8%8B%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="aplayer-CxcWQlJp" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1822114811" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="aplayer-SeqFDihR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1822114811" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 
 
 
