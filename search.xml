@@ -88,7 +88,7 @@
 <ul>
 <li>epoch: All the data in the sample are computed for once is called a epoch</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">optimizer.zero_grad()  train_node_emb=emb(train_edge)  dot_product_result=train_node_emb[<span class="number">0</span>].mul(train_node_emb[<span class="number">1</span>])  dot_product_result=torch.<span class="built_in">sum</span>(dot_product_result,<span class="number">1</span>)  sigmoid_result=sigmoid(dot_product_result)  loss_result=loss_fn(sigmoid_result,train_label)  loss_result.backward()  optimizer.step()  print(loss_result)  print(accuracy(sigmoid_result,train_label))</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">optimizer.zero_grad()  </span><br><span class="line">train_node_emb=emb(train_edge)</span><br><span class="line">dot_product_result=train_node_emb[<span class="number">0</span>].mul(train_node_emb[<span class="number">1</span>])</span><br><span class="line">dot_product_result=torch.<span class="built_in">sum</span>(dot_product_result,<span class="number">1</span>) </span><br><span class="line">sigmoid_result=sigmoid(dot_product_result) </span><br><span class="line">loss_result=loss_fn(sigmoid_result,train_label)  </span><br><span class="line">loss_result.backward()</span><br><span class="line">optimizer.step()  </span><br><span class="line">print(loss_result) </span><br><span class="line">print(accuracy(sigmoid_result,train_label))</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Research</category>
         <category>Learning</category>
@@ -530,7 +530,7 @@
   <entry>
     <title>你好，李焕英</title>
     <url>/2021/03/19/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9D%8E%E7%84%95%E8%8B%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="aplayer-SeqFDihR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1822114811" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="aplayer-AnXRRRcj" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1822114811" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 
 
 
