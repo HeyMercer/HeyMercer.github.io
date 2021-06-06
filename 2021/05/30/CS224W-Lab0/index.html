@@ -435,68 +435,79 @@
       
 
       
-        <h1 id="CS224-W-Lab0"><a href="#CS224-W-Lab0" class="headerlink" title="CS224 W Lab0"></a>CS224 W Lab0</h1><ul>
-<li><p>Introduce some basic concepts of graph mining and Graph Neural Networks.</p>
-</li>
-<li><p>Two Packages:</p>
+        <h1>CS224 W Lab0</h1>
 <ul>
-<li><p>NetworkX</p>
+<li>
+<p>Introduce some basic concepts of graph mining and Graph Neural Networks.</p>
+</li>
+<li>
+<p>Two Packages:</p>
+<ul>
+<li>
+<p>NetworkX</p>
 <p>For Graph: <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/reference/classes/index.html">NetworkX graph types</a></p>
 <p><img src="/2021/05/30/CS224W-Lab0/image-20210527212511812.png" alt="image-20210527212511812"></p>
 </li>
-<li><p>PyTorch Geometric</p>
+<li>
+<p>PyTorch Geometric</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="NetworkX-Tutorial"><a href="#NetworkX-Tutorial" class="headerlink" title="NetworkX Tutorial"></a>NetworkX Tutorial</h2><p>NetworkX is one of the most frequently used Python packages to create, manipulate, and mine graphs.</p>
+<h2 id="NetworkX-Tutorial"><a class="header-anchor" href="#NetworkX-Tutorial">¶</a>NetworkX Tutorial</h2>
+<p>NetworkX is one of the most frequently used Python packages to create, manipulate, and mine graphs.</p>
 <ul>
-<li><p><code>G = nx.Graph</code></p>
+<li>
+<p><code>G = nx.Graph</code></p>
 <p>Create a new empty undirected graph. It could also be:</p>
 <p><code>G = nx.DiGraph</code> etc.</p>
 </li>
-<li><p><code>G.is_directed</code></p>
+<li>
+<p><code>G.is_directed</code></p>
 <p>To judge whether it’s directed graph, return the boolean value.</p>
 </li>
-<li><p><code>G.graph[&quot;name&quot;] = &quot;Bar&quot;</code></p>
+<li>
+<p><code>G.graph[&quot;name&quot;] = &quot;Bar&quot;</code></p>
 <p>Add attribute pair.</p>
 </li>
-<li><p><code>G.add_node(node_for_adding, **attr)</code></p>
+<li>
+<p><code>G.add_node(node_for_adding, **attr)</code></p>
 <p>Add the node and update node attributes(could follow more than 1).</p>
 <ul>
 <li>New way for <code>print</code>: <code>print.format</code> by <code>&#123;&#125;</code></li>
 </ul>
 </li>
-<li><p><code>G.add_nodes_from()</code></p>
+<li>
+<p><code>G.add_nodes_from()</code></p>
 <p>A more flexible way to add nodes. (Add list or something)</p>
 <p><img src="/2021/05/30/CS224W-Lab0/image-20210527214842221.png" alt="image-20210527214842221"></p>
 <ul>
-<li><p>About <code>(data=True)</code></p>
+<li>
+<p>About <code>(data=True)</code></p>
 <p>It could return the attributes information of node when printing.<strong>(Need deeper understanding here)</strong></p>
 <p><img src="/2021/05/30/CS224W-Lab0/image-20210527215110377.png" alt="image-20210527215110377"></p>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><p>About Edge</p>
+<li>
+<p>About Edge</p>
 <p>Change the <code>node_for_adding</code> to a pair of nodes.</p>
 </li>
-</ul>
-<ul>
-<li><p>Visualization</p>
+<li>
+<p>Visualization</p>
 <p><code>nx.draw(G, with_labels = True)</code></p>
 </li>
-</ul>
+<li>
+<p>Other Functions</p>
 <ul>
-<li>Other Functions<ul>
 <li><code>G.degree[node_id]</code>: Get the degree of node_id</li>
 <li><code>G.neighbors(node_id)</code>: Get the set of the neighbors of node_id</li>
 <li>More Information: <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/">Click Here</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="PyTorch-Geometric-Tutorial"><a href="#PyTorch-Geometric-Tutorial" class="headerlink" title="PyTorch Geometric Tutorial"></a>PyTorch Geometric Tutorial</h2><p>PyTorch Geometric (PyG) is an extension library for PyTorch. It provides useful primitives to develop Graph Deep Learning models, including various graph neural network layers and a large number of benchmark datasets.</p>
+<h2 id="PyTorch-Geometric-Tutorial"><a class="header-anchor" href="#PyTorch-Geometric-Tutorial">¶</a>PyTorch Geometric Tutorial</h2>
+<p>PyTorch Geometric (PyG) is an extension library for PyTorch. It provides useful primitives to develop Graph Deep Learning models, including various graph neural network layers and a large number of benchmark datasets.</p>
 <p><strong>Wait for filling…</strong></p>
       
     </div>
@@ -680,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CS224-W-Lab0"><span class="nav-number">1.</span> <span class="nav-text">CS224 W Lab0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NetworkX-Tutorial"><span class="nav-number">1.1.</span> <span class="nav-text">NetworkX Tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch-Geometric-Tutorial"><span class="nav-number">1.2.</span> <span class="nav-text">PyTorch Geometric Tutorial</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">CS224 W Lab0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NetworkX-Tutorial"><span class="nav-number">1.1.</span> <span class="nav-text">NetworkX Tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch-Geometric-Tutorial"><span class="nav-number">1.2.</span> <span class="nav-text">PyTorch Geometric Tutorial</span></a></li></ol></li></ol></div>
             
 
           </div>
