@@ -93,8 +93,15 @@
 <meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/CS224W-Sec-4-5%5Cexample.png">
 <meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/Palgorithm.png">
 <meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/CS224W-Sec-4-5%5Cconnect.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/relational.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/iterative.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/architecture.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/basic.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/notation.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/Users/MaxMercer/AppData/Roaming/Typora/typora-user-images/image-20210606210618137.png">
+<meta property="og:image" content="https://heymercer.ltd/2021/05/31/CS224W-Sec-4-5/sum.png">
 <meta property="article:published_time" content="2021-05-31T13:47:41.000Z">
-<meta property="article:modified_time" content="2021-06-05T14:33:41.202Z">
+<meta property="article:modified_time" content="2021-06-06T13:21:54.105Z">
 <meta property="article:author" content="Mercer Zhang">
 <meta property="article:tag" content="Graph">
 <meta property="article:tag" content="Machine Learning">
@@ -616,6 +623,133 @@
 <li>Solution: Deep Representation Learning and GNN</li>
 </ul>
 <p><strong>Viewing graphs as matrices play a key role in all above algorithms</strong></p>
+<h2 id="Section-5"><a href="#Section-5" class="headerlink" title="Section 5"></a>Section 5</h2><h3 id="5-1"><a href="#5-1" class="headerlink" title="5.1"></a>5.1</h3><h4 id="Message-Passing-and-Node-Classification"><a href="#Message-Passing-and-Node-Classification" class="headerlink" title="Message Passing and Node Classification"></a>Message Passing and Node Classification</h4><ul>
+<li><p>Question: Given a network with labels on some nodes, how do we assign labels to all other nodes in the network?</p>
+<ul>
+<li>Solution: Node Embeddings method</li>
+</ul>
+</li>
+<li><p>Different situation: Semi-supervised node classification</p>
+<ul>
+<li>Semi-supervised: Some labels are given while other are not.</li>
+</ul>
+</li>
+</ul>
+<p>An alternative framework: message passing</p>
+<ul>
+<li><p>Intuition: <strong>Correlations</strong> exist in networks</p>
+<ul>
+<li>Similar nodes are connected</li>
+<li>Collective Classification</li>
+</ul>
+</li>
+<li><p>Three Classical Techniques:</p>
+<ul>
+<li><strong>Relational classification</strong></li>
+<li><strong>Iterative classification</strong></li>
+<li><strong>Belief propagation</strong></li>
+</ul>
+</li>
+<li><p>Some notions</p>
+<ul>
+<li>Homophily: The tendency of individuals to associate and bond with similar others<ul>
+<li>Examples: Social Network(With the same interest, people are more closely connected)</li>
+</ul>
+</li>
+<li>Influence: Social connections can influence the individual characteristics of a person<ul>
+<li>Examples: Recommend movie, music….</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Motivation:</p>
+<ul>
+<li>Guilt-by-association: If I am connected to a node with label X, then I am likely to have label X as well</li>
+<li>Classification label of a node v may depend on<ul>
+<li>Features of v</li>
+<li>Labels of the nodes in v’s neighborhood</li>
+<li>Features of the nodes in v’s neighborhood </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Collective Classification:</p>
+<ul>
+<li><p>Intuition: Using correlations</p>
+</li>
+<li><p>Markov Assumption: The label Y<del>v</del> of one node v depends on the labels of it’s neighbors.</p>
+<p>P(Y<del>v</del>) = P(Y<del>v</del> | N<del>v</del>)</p>
+</li>
+<li><p>Steps:</p>
+<ul>
+<li><p>Local Classifier: Used for initial label assignment</p>
+</li>
+<li><p>Relational Classifier: Capture correlations(Learn)</p>
+</li>
+<li><p>Collective Inference : Propagate the correlation</p>
+<p><strong>Apply relational classifier to each node iteratively until converge</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h3><h4 id="Relational-and-Iterative-classification"><a href="#Relational-and-Iterative-classification" class="headerlink" title="Relational and Iterative classification"></a>Relational and Iterative classification</h4><ul>
+<li><p>Probabilistic <strong>Relational Classifier</strong>(Initialize the unlabeled nodes with 0.5(prob. =class 1))</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/relational.png"></p>
+<p>Example: P24</p>
+</li>
+</ul>
+<p>How to use <strong>node attributes</strong> in our algorithm?</p>
+<ul>
+<li><p><strong>Iterative Classification</strong></p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/iterative.png"></p>
+<p>z<del>v</del>（summary vector）: Histogram of the number (or fraction) of each label in N<del>v</del></p>
+</li>
+<li><p>Architecture</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/architecture.png"></p>
+<p>How to train classifier has not introduced yet.</p>
+<p>Example: P39</p>
+</li>
+<li><p>Steps:</p>
+<ul>
+<li>Train classifier</li>
+<li>Apply classifier to test</li>
+<li>Iterate<ul>
+<li>Update z<del>v</del></li>
+<li>Update label Y<del>v</del></li>
+</ul>
+</li>
+</ul>
+<p>M’s Intuition: Classifier may have a initial mechanism to predict Y<del>v</del>, so the z<del>v</del> can be filled initially and the training can start.</p>
+</li>
+</ul>
+<p>M’s Q: If it reaches the maximum iteration times but still can’t converge, will it stabilize?(in a small fluctuation)</p>
+<h3 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h3><h4 id="Loopy-Belief-Propagation"><a href="#Loopy-Belief-Propagation" class="headerlink" title="Loopy Belief Propagation"></a>Loopy Belief Propagation</h4><p>Loopy? : Apply to the graph has cycles</p>
+<ul>
+<li><p>Message Passing: Basics</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/basic.png"></p>
+<p>Extension: On Tree(Like the flash back of DFS)</p>
+</li>
+<li><p>Notations:</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/notation.png"></p>
+</li>
+<li><p>Loopy BP algorithm</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/Users\MaxMercer\AppData\Roaming\Typora\typora-user-images\image-20210606210618137.png" alt="image-20210606210618137"></p>
+<p>We can see that, through label-label potential, we <strong>collect all the possibilities that might occur</strong>, not like the previous correlation(homophily).</p>
+</li>
+<li><p> Have Cycles?</p>
+</li>
+<li><p>What can go wrong: Beliefs may not converge</p>
+</li>
+<li><p>In practice: Loopy BP is still good for complex graphs which contain many branches</p>
+</li>
+<li><p>In some extreme situations: Message loops</p>
+</li>
+<li><p>Summary</p>
+<p><img src="/2021/05/31/CS224W-Sec-4-5/sum.png"></p>
+</li>
+</ul>
 <h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>navigational: 导航的</p>
 <p>citation: 引用</p>
 <p>encyclopedia:[ɪnˌsaɪkləˈpiːdiə]: 百科全书</p>
@@ -634,6 +768,15 @@
 <p>matrix factorization: 矩阵分解</p>
 <p>discrepancy: 差异</p>
 <p>albeit:[ˌɔːlˈbiːɪt]:虽然，尽管</p>
+<p>intermediate: 中间的</p>
+<p>correlation: 相关性</p>
+<p>leverage: 利用</p>
+<p>probabilistic: 基于概率的</p>
+<p>ground-truth: 基本事实</p>
+<p>likelihood: 可能性</p>
+<p>histogram: 直方图</p>
+<p>notation: 符号</p>
+<p>heuristic: [hjuˈrɪstɪk]: adj. 启发式的</p>
       
     </div>
     
@@ -816,7 +959,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CS224W-Sec-4-5"><span class="nav-number">1.</span> <span class="nav-text">CS224W Sec 4~5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-4"><span class="nav-number">1.1.</span> <span class="nav-text">Section 4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Pipeline"><span class="nav-number">1.1.1.</span> <span class="nav-text">4.1 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PageRank"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">PageRank</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Summary"><span class="nav-number">1.1.2.</span> <span class="nav-text">4.1 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Pipeline"><span class="nav-number">1.1.3.</span> <span class="nav-text">4.2 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PageRank-How-to-solve"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">PageRank: How to solve</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Summary"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.2 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Pipeline"><span class="nav-number">1.1.5.</span> <span class="nav-text">4.3 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Walk-with-Restarts"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Random Walk with Restarts</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Summary"><span class="nav-number">1.1.6.</span> <span class="nav-text">4.3 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-Pipeline"><span class="nav-number">1.1.7.</span> <span class="nav-text">4.4 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Embeddings-amp-Matrix-Factorization"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">Embeddings &amp; Matrix Factorization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Words"><span class="nav-number">1.2.</span> <span class="nav-text">Words</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CS224W-Sec-4-5"><span class="nav-number">1.</span> <span class="nav-text">CS224W Sec 4~5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-4"><span class="nav-number">1.1.</span> <span class="nav-text">Section 4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Pipeline"><span class="nav-number">1.1.1.</span> <span class="nav-text">4.1 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PageRank"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">PageRank</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Summary"><span class="nav-number">1.1.2.</span> <span class="nav-text">4.1 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Pipeline"><span class="nav-number">1.1.3.</span> <span class="nav-text">4.2 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PageRank-How-to-solve"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">PageRank: How to solve</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Summary"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.2 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Pipeline"><span class="nav-number">1.1.5.</span> <span class="nav-text">4.3 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Walk-with-Restarts"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Random Walk with Restarts</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Summary"><span class="nav-number">1.1.6.</span> <span class="nav-text">4.3 Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-Pipeline"><span class="nav-number">1.1.7.</span> <span class="nav-text">4.4 Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Embeddings-amp-Matrix-Factorization"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">Embeddings &amp; Matrix Factorization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-5"><span class="nav-number">1.2.</span> <span class="nav-text">Section 5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">5.1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Message-Passing-and-Node-Classification"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Message Passing and Node Classification</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2"><span class="nav-number">1.2.2.</span> <span class="nav-text">5.2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Relational-and-Iterative-classification"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Relational and Iterative classification</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3"><span class="nav-number">1.2.3.</span> <span class="nav-text">5.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Loopy-Belief-Propagation"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Loopy Belief Propagation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Words"><span class="nav-number">1.3.</span> <span class="nav-text">Words</span></a></li></ol></li></ol></div>
             
 
           </div>
